@@ -1,10 +1,11 @@
-const removeFromArray = function(arr, value ) {
+const removeFromArray = function(arr, ...values ) {
     
-        let index = arr.indexOf(value);
-        if (index > -1) {
-          arr.splice(index, 1);
+    values.forEach(function(value) {
+        while (arr.indexOf(value) > -1) {
+          arr.splice(arr.indexOf(value), 1);
         }
-        return arr;
+      });
+      return arr;
      
 };
 
